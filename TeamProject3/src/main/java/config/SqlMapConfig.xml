@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+   <!-- DTO클래스의 별칭을 부여 -->
+	<typeAliases>
+	    <typeAlias alias="UserCommand" 
+	                    type="com.user.domain.UserCommand"/>
+	   <typeAlias alias="Class_tagCommand" 
+	                    type="com.home.domain.Class_tagCommand"/>
+	   <typeAlias alias="ClassCommand" 
+	                    type="com.home.domain.ClassCommand"/>
+	   <typeAlias alias="CommCommand" 
+	                    type="com.home.domain.CommCommand"/>
+	   <typeAlias alias="TeacherCommand" 
+	                    type="com.home.domain.TeacherCommand"/>           
+	</typeAliases>
+	
+	<!--접속후 불러올 파일의 리스트를 적어주는 부분  -->
+	<mappers>
+	    <mapper resource="com/user/dao/UserMapper.xml"/>
+	    <mapper resource="com/home/dao/HomeMapper.xml"/>
+	</mappers>
+</configuration>

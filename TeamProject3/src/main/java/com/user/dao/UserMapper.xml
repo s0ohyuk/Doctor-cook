@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+    
+ <mapper namespace="UserMapper">
+ 
+ <!-- 회원가입 -->
+ <insert id="signUp" parameterType="UserCommand">
+ INSERT INTO member(mem_id,
+ 					mem_pass,
+ 					mem_email,
+ 					mem_born,
+ 					mem_zipcode,
+ 					mem_addr1,
+ 					mem_addr2,
+ 					mem_phone,
+ 					mem_join)
+			 VALUES(#{mem_id},
+			 		#{mem_pass},
+			 		#{mem_email},
+					#{mem_born},
+					#{mem_zipcode},
+					#{mem_addr1},
+					#{mem_addr2},
+					#{mem_phone},
+					sysdate)
+ </insert>
+ 
+ <!-- id중복체크 -->
+ <select id="idCheck" resultType="int"> 	
+  		select count(*) from member where mem_id = #{mem_id}
+ </select>
+ 
+ <!-- logIn -->
+ <select id="logIn" resultType="UserCommand">
+ select * from member where mem_id=#{mem_id}
+                        and mem_pass=#{mem_pass}
+ </select>
+ 
+<!-- 회원정보보기 -->
+<!--  <select id="userInfo" resultType="UserCommand">
+ select * from member where mem_id=#{mem_id}
+ </select> -->
+ 
+ <!-- 회원정보수정 -->
+<update id="modifyUser" parameterType="UserCommand">
+ update member set mem_id=#{mem_id},
+ 				   mem_name=#{mem_name},
+ 				   mem_email=#{mem_email},
+ 				   mem_born=#{mem_born},
+ 				   mem_zipcode=#{mem_zipcode},
+ 				   mem_addr1=#{mem_addr1},
+ 				   mem_addr2=#{mem_addr2},
+ 				   mem_phone=#{mem_phone}
+ 			 where mem_id=#{mem_id}
+ </update>
+ 
+ <!-- 비밀번호변경 -->
+ <!-- <update id="modifypwd" parameterType="UserCommand">
+ update member set mem_pass=#{mem_pass}
+ where mem_id=#{mem_id},mem_phone=#{mem_phone}
+ </update> -->
+ 
+ </mapper>

@@ -1,0 +1,193 @@
+/* 전체 글씨체 */
+@font-face {
+  font-family: 'NanumSquareRound';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 기본 글자 */
+body{
+  color: var(--font);
+  font-family: 'NanumSquareRound','Noto Sans';
+}
+
+/* ======================
+          색상
+========================*/
+:root{
+  --font:#424242;
+  --primary: #FF6F61;
+  --primary-focus:#DB4746;
+  --board-header: #e9ecef;
+}
+
+/* 기본 색상 설정 */
+.border-primary {
+  border-color:var(--primary) !important;
+}
+
+/* ======================
+          버튼
+========================*/
+/* primary버튼 */
+.btn-primary {
+  color: var(--white);
+  background-color: var(--primary);
+  border-color: var(--primary);
+  padding:  .4em 1.2em;
+}
+
+.btn-primary:hover {
+  color: var(--white);
+  background-color: var(--primary-focus);
+  border-color: var(--primary-focus);
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  color: var(--white);
+  background-color: var(--primary-focus);
+  border-color: var(--primary-focus);
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  color: var(--white);
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: var(--white);
+  background-color: var(--primary-focus);
+  border-color: var(--primary-focus);
+}
+
+.btn-primary:focus, .btn-primary.focus, 
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-primary.dropdown-toggle:focus{
+  box-shadow: none;
+}
+
+/* warning버튼 */
+.btn-warning {
+  color: var(--white);
+  padding:  .4em 1.2em;
+}
+
+.btn-warning:hover,
+.btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active,
+.show > .btn-warning.dropdown-toggle {
+  color: var(--white);
+}
+
+.btn-warning:focus, .btn-warning.focus, 
+.btn-warning:not(:disabled):not(.disabled).active:focus,
+.btn-warning:not(:disabled):not(.disabled):active:focus,
+.show>.btn-warning.dropdown-toggle:focus{
+  box-shadow: none;
+}
+
+/*danger 버튼*/
+.btn-danger {
+  color: var(--white);
+  padding:  .4em 1.2em;
+}
+
+.btn-danger:focus, .btn-danger.focus, 
+.btn-danger:not(:disabled):not(.disabled).active:focus,
+.btn-danger:not(:disabled):not(.disabled):active:focus,
+.show>.btn-danger.dropdown-toggle:focus{
+  box-shadow: none;
+}
+
+/* ======================
+          폼
+========================*/
+textarea{
+  resize: none;
+}
+
+/* select */
+.custom-select:focus {
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+/* file */
+.custom-file-input:focus ~ .custom-file-label {
+  border-color: var(--primary);
+  box-shadow: none;
+}
+
+/* pagenation */
+.page-link {
+  color: var(--primary);
+}
+
+.page-item.active .page-link {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.page-link:hover {
+  color: var(--primary-hover);
+}
+
+.page-item.active .page-link {
+  background-color:var(--primary);
+  border-color: var(--primary);
+}
+
+.page-link:focus {
+  box-shadow: none;
+}
+
+/* nav-pills */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: var(--primary);
+}
+
+
+/* ======================
+          링크
+========================*/
+a{
+  color:var(--font);
+}
+
+a:hover{
+  text-decoration: none;
+  color: var(--primary);
+}
+
+/* input 포커스 */
+.form-control:focus{
+  color:var(--secondary);
+  border-color:var(--primary);
+  outline:0;
+  box-shadow:none;
+}
+
+/* ======================
+      스크롤 탑
+========================*/
+.top{
+  background: var(--gray);
+  color: var(--white);
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  line-height: 45px;
+  text-align: center;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 9999;
+  display: none;
+}
